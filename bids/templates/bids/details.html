@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<div class="row pt-4">
+    <div class="col-3">
+        <img src="{{ product.icon.url }}" class="img-fluid ">
+    </div>
+    <div class="col-5 pt-4">
+        <h3>{{ product.title }}</h3> 
+        <br>
+        
+        <p>Bid Starts from: {{ product.price }}$</p>
+        <p>Sold by: {{ product.seller }}</p>
+        
+        <div class="row">
+            <div class="col-2 pt-3">
+                <img src="{% static 'cod.png' %}" class="d-inline-block align-top" height="64" width=64/>
+                
+            </div>
+            <div class="col-2 pt-3">
+                <img src="{% static 'guarantee.png' %}" class="d-inline-block align-top" height="64" width=64/>
+                <br>
+            </div>
+            <div class="col-3 pt-3">
+                <img src="{% static 'fast-delivery.png' %}" class="d-inline-block align-top" height="64" width=64/>
+                <br>
+            </div>
+        </div><br>
+        <input type="textbox" name="bid_value" size="7"/>
+        <input class="btn btn-primary" type="submit" name="submit" value="Place Bid">
+    </div>
+    <div class="col-3">
+        <b>Feature details:</b><p>{{ product.body }}</p>
+    </div>
+</div>
+
+
+
+
+
+{% endblock %}

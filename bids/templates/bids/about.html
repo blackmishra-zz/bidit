@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>About</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/album/">
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'asset/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="{% static 'asset/css/heroes.css' %}" rel="stylesheet">
+    
+  </head>
+  <body>
+    <div class="b-example-divider"></div>
+<div class="bg-dark text-secondary px-4 py-5 text-center">
+  <div class="py-5">
+    <h1 class="display-5 fw-bold text-white">We are your favourite, online store.</h1>
+    <div class="col-lg-12 mx-auto">
+      <p class="fs-5 mb-4">Thank you from the bottom of its heart for visiting.</p>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <a href="{%url 'category'%}" ><button type="button" class="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold">Continue Shopping</button></a>
+        <a href="{%url 'contact'%}" ><button type="button" class="btn btn-outline-light btn-lg px-4">Reach us</button></a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="b-example-divider"></div>
+<br>
+<br>
+<div class="container marketing align-items-center">
+<div class="row text-center">  
+  <h1 class="display-5 fw-bold text-dark">Our Team</h1>  
+  <div class="col-lg-4 ">
+    <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>
+      <image width="140" height="140" xlink:href="{% static 'jim.jpg' %}" />
+    </svg>
+
+    <h2>Jim Mascott</h2>
+    <p>Guitar player and songwriter from Mesa </p>
+    
+  </div><!-- /.col-lg-4 -->
+  <div class="col-lg-4">
+    <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>
+      <image width="140" height="140" xlink:href="{% static 'nemo.jpg' %}" />
+    </svg>
+    <h2>Nick Hedgins</h2>
+    <p> Thorough, analytical and hard-working professional</p>
+   
+  </div><!-- /.col-lg-4 -->
+  <div class="col-lg-4">
+    <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>
+      <image width="140" height="140" xlink:href="{% static 'nick.jpg' %}" />
+    </svg>
+    <h2>Nick Sterling</h2>
+    <p>Intelligent, mild-mannered and often called by the nickname "Big Tuna".</p>
+   
+  </div><!-- /.col-lg-4 -->
+</div><!-- /.row -->
+</div>
+
+
+
+<script src="{% static 'asset/js/bootstrap.bundle.min.js'%}"></script>
+
+      
+</body>
+{% endblock %}

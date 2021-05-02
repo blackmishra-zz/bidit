@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>Contact</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/album/">
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'asset/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="{% static 'asset/css/heroes.css' %}" rel="stylesheet">
+  </head>
+  <body>
+  
+<div class="container col-xl-10 col-xxl-8 px-4 py-5">
+  <div class="row g-5 py-5">
+    <div class="col-lg-6  text-lg-start">
+      <a href="/" class="d-flex mr-2 mb-lg-0 text-dark text-decoration-none">
+        <img class="d-block mx-auto mb-4" src="{% static 'logo.png' %}" alt="" width="72" height="auto">
+     </a>
+      <h1 class="display-4 fw-bold lh-1 mb-3">Hi there! </h1>
+      <p class="col-lg-7 fs-4">What can we help you with?</p>
+    </div>
+    <div class="col">
+          {% if messages %}
+          <ul class="messages">
+              {% for message in messages %}
+              <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+              {% endfor %}
+          </ul>
+          {% endif %}
+      <div class="container-fluid">
+        <h1>Email us</h1>
+        <form method="POST" action="{% url 'send_mess' %}"><br>
+        {% csrf_token %}
+        Your email<br>
+        <input type="text" name="email"/>
+        <br>
+        Subject<br>
+        <input type="text" name="subject"/>
+        <br>
+        Message<br>
+        <input type="text" name="message"/><br><br>
+        <input class="btn btn-primary" type="submit" name="submit" value="Send mail">
+        </form>
+        </div>
+    </div>
+  </div>
+</div>
+<script src="{% static 'asset/js/bootstrap.bundle.min.js'%}"></script>
+
+      
+</body>
+{% endblock %}
